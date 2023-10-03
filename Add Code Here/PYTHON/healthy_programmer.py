@@ -16,7 +16,7 @@ def writefile(fname):
     with open(fname,"at") as f:
         s=input("\nEnter What have you done: ")
         r=str(getdate())
-        f.write('['+r+']')
+        f.write(f'[{r}]')
         f.write('\t'+s+'\n')
         print("Data Stored Successfully")
 class music_play(Thread):

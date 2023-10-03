@@ -187,10 +187,10 @@ while running:
                     bullets[magazine].X, bullets[magazine].Y = player.X + 16, player.Y
                     bullets[magazine].fired()
         if event.type == pygame.KEYUP:
-            if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
+            if event.key in [pygame.K_RIGHT, pygame.K_LEFT]:
                 player.stop()
     show_score()
-    if len(enemies) == 0:
+    if not enemies:
         level_up()
     for enemy in enemies:
         enemy.move()

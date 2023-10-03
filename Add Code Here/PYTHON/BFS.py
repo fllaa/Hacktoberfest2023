@@ -18,11 +18,8 @@ class Graph:
 		visited = [False] * (max(self.graph) + 1)
 
 		# Create a queue for BFS
-		queue = []
+		queue = [s]
 
-		# Mark the source node as
-		# visited and enqueue it
-		queue.append(s)
 		visited[s] = True
 
 		while queue:

@@ -20,10 +20,7 @@ class Solution:
         while temp.next is not None:
             pos += 1
             if total - pos == n:
-                if n == 1:
-                    temp.next = None
-                else:
-                    temp.next = temp.next.next
+                temp.next = None if n == 1 else temp.next.next
                 break
             temp = temp.next
         return head

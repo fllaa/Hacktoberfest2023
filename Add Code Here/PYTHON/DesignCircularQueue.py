@@ -23,23 +23,13 @@ class MyCircularDeque:
             return True
         return False
     def getFront(self) -> int:
-        if len(self.st1) > 0:
-            front = self.st1[0]
-            return front
-        return -1
+        return self.st1[0] if len(self.st1) > 0 else -1
     def getRear(self) -> int:
-        if len(self.st1) > 0:
-            rear = self.st1[-1]
-            return rear
-        return -1
+        return self.st1[-1] if len(self.st1) > 0 else -1
     def isEmpty(self) -> bool:
-        if len(self.st1) == 0:
-            return True
-        return False            
+        return len(self.st1) == 0            
     def isFull(self) -> bool:
-        if len(self.st1) == self.st2:
-            return True
-        return False
+        return len(self.st1) == self.st2
 
 # Your MyCircularDeque object will be instantiated and called as such:
 # obj = MyCircularDeque(k)

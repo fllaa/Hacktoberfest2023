@@ -13,10 +13,9 @@ def fibonachi(fib_dict, n):
     '''
     if n in fib_dict:
         return fib_dict[n]
-    else:
-        ans = fibonachi(fib_dict, (n - 1)) + fibonachi(fib_dict, (n - 2))
-        fib_dict[n] = ans
-        return ans
+    ans = fibonachi(fib_dict, (n - 1)) + fibonachi(fib_dict, (n - 2))
+    fib_dict[n] = ans
+    return ans
     
 def calculate_sum(fib_dict, upper=4000000):
     '''

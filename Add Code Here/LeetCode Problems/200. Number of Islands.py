@@ -15,11 +15,11 @@ class Solution:
         
     def numIslands(self, grid: List[List[str]]) -> int:
         count = 0
-        global ce 
+        global ce
         ce = 0
         self.row = len(grid)
         self.col = len(grid[0])
-        visited = [[False for i in range(len(grid[0]))] for j in range(len(grid))]
+        visited = [[False for _ in range(len(grid[0]))] for _ in range(len(grid))]
         for i in range(len(grid)):
             for j in range(len(grid[0])):
                 if  visited[i][j] ==False and grid[i][j]=="1":
