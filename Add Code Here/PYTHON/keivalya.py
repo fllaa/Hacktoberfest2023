@@ -13,13 +13,9 @@ def astar(maze, start, end):
     start_node = Node(None, start)
     end_node = Node(None, end)
 
-    # Initialize open and closed lists
-    open_list = []
     closed_list = []
 
-    # Add the start node
-    open_list.append(start_node)
-
+    open_list = [start_node]
     # Define movement directions (4 directions: up, down, left, right)
     directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
@@ -87,7 +83,11 @@ def astar(maze, start, end):
             child.f = child.g + child.h
 
             # Child is already in the open list and having a lower f, skip it
-            if len([open_node for open_node in open_list if child == open_node and child.g > open_node.g]) > 0:
+            if [
+                open_node
+                for open_node in open_list
+                if child == open_node and child.g > open_node.g
+            ]:
                 continue
 
             # Add the child to the open list

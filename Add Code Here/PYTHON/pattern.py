@@ -2,63 +2,63 @@ val = int(input("Give your value in stars: "))
 #for square
 def square(num):
     num = val
-    for i in range(num):
-        for j in range(num):
+    for _ in range(num):
+        for _ in range(num):
             print("*", end = " ")
         print()
 #increasing triangle
 def increasing_triangle(num):
     num = val
     for i in range(num):
-        for j in range(i+1):
+        for _ in range(i+1):
             print("*", end = " ")
         print()      
 #decreasing triangle
 def decreasing_triangle(num):
     num = val
     for i in range(num):
-        for j in range(i,n):
+        for _ in range(i,n):
             print("*", end = " ")
         print()
 #right sided triangle (increasing star)
 def right_sided_triangle_inc(num):
     num = val
     for i in range(num):
-        for j in range(i,num):
+        for _ in range(i,num):
             print("",end = " ")
-        for j in range(i+1):
-            print("*", end = " ")    
+        for _ in range(i+1):
+            print("*", end = " ")
         print()        
 #right sided triangle (decreasing star)        
 def right_sided_triangle_dec(num):
     num = val
     for i in range(num):
-        for j in range(i+1):
+        for _ in range(i+1):
             print("",end = " ")
-        for j in range(i,num):
-            print("*", end = " ")    
+        for _ in range(i,num):
+            print("*", end = " ")
         print()      
 #hill pattern
 def hill_pattern(num):
     num = val
     for i in range(num):
-        for j in range(i,num):
+        for _ in range(i,num):
             print(" ", end = " ")
-        for j in range(i):
+        for _ in range(i):
             print("*",end = " ")
-        for j in range(i+1):
-            print("*",end = " ")    
+        for _ in range(i+1):
+            print("*",end = " ")
         print()
 #reverse hill pattern
 def reverse_hill_pattern(num):
     num = val
     for i in range(num):
-        for j in range(i+1):
+        for _ in range(i+1):
             print(" ", end = " ")
-        for j in range(i,n-1):
+        for _ in range(i,n-1):
             print("*",end = " ")
-        for j in range(i,n):
-            print("*",end = " ")    
+        for _ in range(i,n):
+            print("*",end = " ")
         print()      
 #diamond pattern
 def diamond(num):

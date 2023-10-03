@@ -5,14 +5,11 @@ from collections import Counter
 def preprocess_text(text):
     # Convert text to lowercase
     text = text.lower()
-    
+
     # Remove special characters and numbers
     text = re.sub(r'[^a-z ]', '', text)
-    
-    # Tokenize the text into words
-    words = text.split()
-    
-    return words
+
+    return text.split()
 
 # Function to calculate the Jaccard similarity between two sets of words
 def calculate_jaccard_similarity(set1, set2):
@@ -24,22 +21,17 @@ def calculate_jaccard_similarity(set1, set2):
 def check_plagiarism(text1, text2, threshold=0.5):
     words1 = set(preprocess_text(text1))
     words2 = set(preprocess_text(text2))
-    
+
     similarity = calculate_jaccard_similarity(words1, words2)
-    
-    if similarity >= threshold:
-        return True
-    else:
-        return False
+
+    return similarity >= threshold
 
 # Example usage
 if __name__ == "__main__":
     document1 = "This is a sample document for testing plagiarism detection."
     document2 = "This is a sample document used for testing plagiarism checker."
-    
-    is_plagiarized = check_plagiarism(document1, document2)
-    
-    if is_plagiarized:
+
+    if is_plagiarized := check_plagiarism(document1, document2):
         print("Plagiarism detected!")
     else:
         print("No plagiarism detected.")

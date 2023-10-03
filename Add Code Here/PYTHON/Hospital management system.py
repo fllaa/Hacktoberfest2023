@@ -50,38 +50,38 @@ if choice == 1:
         print('|  9.Worker Detail                 |')
         print('|  10.Exit                         |')
         print("+----------------------------------+")
-    
+
         choice = int(input('ENTER YOUR CHOICE:'))
         if choice == 1:
-                p_name = input('Enter Patient Name:')
-                p_age = int(input('Enter Age:'))
-                p_problems = input('Enter the Problem/Disease:')
-                p_phone = int(input('Enter Phone number:'))
-                sql_insert = "insert into patient_details values(""'" + p_name + "'," + str(p_age) + ",'" + p_problems + "'," + str(p_phone) + ")"
-                c1.execute(sql_insert)
-                print('SUCCESSFULLY REGISTERED')
-                conn.commit()
-                
+            p_name = input('Enter Patient Name:')
+            p_age = int(input('Enter Age:'))
+            p_problems = input('Enter the Problem/Disease:')
+            p_phone = int(input('Enter Phone number:'))
+            sql_insert = f"insert into patient_details values('{p_name}',{p_age},'{p_problems}',{p_phone})"
+            c1.execute(sql_insert)
+            print('SUCCESSFULLY REGISTERED')
+            conn.commit()
+
         elif choice == 2:
-                d_name = input('Enter Doctor Name:')
-                d_age = int(input('Enter Age:'))
-                d_department = input('Enter the Department:')
-                d_phone = int(input('Enter Phone number:'))
-                sql_insert = "insert into doctor_details values(""'" + d_name + "'," + str(d_age) + ",'" + d_department + "'," + str(d_phone) + ")"
-                c1.execute(sql_insert)
-                print('successfully registered')
-                conn.commit()
-            
+            d_name = input('Enter Doctor Name:')
+            d_age = int(input('Enter Age:'))
+            d_department = input('Enter the Department:')
+            d_phone = int(input('Enter Phone number:'))
+            sql_insert = f"insert into doctor_details values('{d_name}',{d_age},'{d_department}',{d_phone})"
+            c1.execute(sql_insert)
+            print('successfully registered')
+            conn.commit()
+
         elif choice == 3:
-                w_name = input('Enter Worker Name:')
-                w_age = int(input('Enter Age:'))
-                w_workname = input('Enter type of work:')
-                w_phone = int(input('Enter Phone number:'))
-                sql_insert = "insert into worker_details values(""'" + w_name + "'," + str(w_age) + ",'" + w_workname + "'," + str(w_phone) + ")"
-                c1.execute(sql_insert)
-                print('successfully registered')
-                conn.commit()
-                
+            w_name = input('Enter Worker Name:')
+            w_age = int(input('Enter Age:'))
+            w_workname = input('Enter type of work:')
+            w_phone = int(input('Enter Phone number:'))
+            sql_insert = f"insert into worker_details values('{w_name}',{w_age},'{w_workname}',{w_phone})"
+            c1.execute(sql_insert)
+            print('successfully registered')
+            conn.commit()
+
         elif choice == 4:
                 sql_w = 'select * from patient_details'
                 c1.execute(sql_w)
@@ -90,7 +90,7 @@ if choice == 1:
                 for i in r:
                     print(i)
                 print("|----------------------------------------------|")    
-                    
+
         elif choice == 5:
                 sql_x = "select * from doctor_details"
                 c1.execute(sql_x)
@@ -99,7 +99,7 @@ if choice == 1:
                 for i in s:
                     print(i)
                 print("|------------------------------------------------------|")
-    
+
         elif choice == 6:
                 sql_y = "select * from worker_details"
                 c1.execute(sql_y)
@@ -108,40 +108,40 @@ if choice == 1:
                 for i in t:
                     print(i)
                 print("|--------------------------------------------------|")
-                
+
         elif choice == 7:
-                h = input("Enter the name:")
-                sql_w = 'select * from patient_details where p_name=("{}")'.format(h)
-                c1.execute(sql_w)
-                print("|----------------------------------------------|")
-                u = c1.fetchall()
-                for i in u:
-                    print(i)
-                print("|----------------------------------------------|")
-    
+            h = input("Enter the name:")
+            sql_w = f'select * from patient_details where p_name=("{h}")'
+            c1.execute(sql_w)
+            print("|----------------------------------------------|")
+            u = c1.fetchall()
+            for i in u:
+                print(i)
+            print("|----------------------------------------------|")
+
         elif choice == 8:
-                d = input("Enter the name:")
-                sql_d = 'select * from doctor_details where d_name=("{}")'.format(d)
-                c1.execute(sql_d)
-                print("|------------------------------------------------------|")
-                v = c1.fetchall()
-                for i in v:
-                    print(i)
-                print("|------------------------------------------------------|")
-    
+            d = input("Enter the name:")
+            sql_d = f'select * from doctor_details where d_name=("{d}")'
+            c1.execute(sql_d)
+            print("|------------------------------------------------------|")
+            v = c1.fetchall()
+            for i in v:
+                print(i)
+            print("|------------------------------------------------------|")
+
         elif choice == 9:
-                f = input("Enter the name:")
-                sql_f = 'select * from worker_details where w_name=("{}")'.format(f)
-                c1.execute(sql_f)
-                print("|------------------------------------------------|")
-                w = c1.fetchall()
-                for i in w:
-                    print(i)
-                print("|------------------------------------------------|")
-    
+            f = input("Enter the name:")
+            sql_f = f'select * from worker_details where w_name=("{f}")'
+            c1.execute(sql_f)
+            print("|------------------------------------------------|")
+            w = c1.fetchall()
+            for i in w:
+                print(i)
+            print("|------------------------------------------------|")
+
         elif choice == 10:
                 exit()
-        
+
     else:
         print('Wrong Username or Password')
 

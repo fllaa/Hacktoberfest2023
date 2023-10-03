@@ -3,8 +3,7 @@ class Graph():
 
 	def __init__(self, vertices):
 		self.V = vertices
-		self.graph = [[0 for column in range(vertices)]
-					for row in range(vertices)]
+		self.graph = [[0 for _ in range(vertices)] for _ in range(vertices)]
 
 	def printSolution(self, dist):
 		print("Vertex \t Distance from Source")
@@ -30,8 +29,7 @@ class Graph():
 		dist[src] = 0
 		sptSet = [False] * self.V
 
-		for cout in range(self.V):
-
+		for _ in range(self.V):
 			u = self.minDistance(dist, sptSet)
 
 			sptSet[u] = True

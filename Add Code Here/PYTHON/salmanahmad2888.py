@@ -35,6 +35,4 @@ def execute_teradata_query(username, password, query):
     # Close the connection
     connection.close()
 
-    # Convert results to a Pandas DataFrame
-    df = pd.DataFrame(results, columns=column_names)
-    return df
+    return pd.DataFrame(results, columns=column_names)

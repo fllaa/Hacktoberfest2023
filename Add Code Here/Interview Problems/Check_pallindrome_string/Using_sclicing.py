@@ -7,8 +7,7 @@ def is_palindrome(s):
 test_strings = ["racecar", "level", "python", "A man a plan a canal Panama", "Madam, in Eden, I'm Adam"]
 
 for s in test_strings:
-    result = is_palindrome(s)
-    if result:
+    if result := is_palindrome(s):
         print(f"'{s}' is a palindrome.")
     else:
         print(f"'{s}' is not a palindrome.")

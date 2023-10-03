@@ -1,12 +1,7 @@
 
 num = 100
 
-factors = []
-for i in range (1, num//2 + 1):
-    if ((num) % i == 0):
-        factors.append(i)
-
-
+factors = [i for i in range (1, num//2 + 1) if ((num) % i == 0)]
 factors.append(num)
 print(factors)
 
